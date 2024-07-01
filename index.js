@@ -1,5 +1,7 @@
 var drumButtons = document.getElementsByClassName("drum");
 
+
+
 for (var i = 0; i < drumButtons.length; i++) {
     drumButtons[i].addEventListener("click", (function(i) {
         return function() {
@@ -8,6 +10,32 @@ for (var i = 0; i < drumButtons.length; i++) {
         };
     })(i));
 }
+
+var heading1 = $("h1");
+    var originalText = heading1.text(); // Store the original text
+
+    heading1.on("mouseover", function() {
+        makered();
+        heading1.text("Roll the 🥁 Drum also using keypresses"); // Change text to "Drum Roll"
+    });
+
+    heading1.on("mouseout", function() {
+        resetColor();
+        heading1.text(originalText); // Revert text to original
+    });
+
+    function makered() {
+        heading1.css("color", "red");
+    }
+
+    function resetColor() {
+        heading1.css("color", "");
+    }
+
+
+
+
+
 for (var i = 0; i < drumButtons.length; i++) {
     drumButtons[i].addEventListener("click", (function(i) {
         return function() {
